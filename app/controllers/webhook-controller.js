@@ -54,7 +54,7 @@ router.post('/', function (req, res) {
                     },
                     {
                         message: "Antes de abrir a empresa, o que acha de validarmos o seu negócio ?",
-                        data: {url: 'http://hackauol02.xyz//canvas/' + code}
+                        data: {url: 'http://hackauol02.xyz/canvas/' + code}
                     }
                 ]
             }
