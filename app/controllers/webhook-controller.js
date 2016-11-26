@@ -4,38 +4,63 @@ var Canvas = require('../models/canvas');
 var randomstring = require("randomstring");
 
 router.post('/', function (req, res) {
+    // Canvas.create({
+    //     code: code,
+    //     data: {
+    //         key_partners: 'key_partners' + code,
+    //         key_activities: 'key_activities' + code,
+    //         key_resources: 'key_resources' + code,
+    //         cost_structure: 'cost_structure' + code,
+    //         value_propositions: 'value_propositions' + code,
+    //         customer_relationships: 'customer_relationships' + code,
+    //         channels: 'channels',
+    //         customer_segments: 'customer_segments' + code,
+    //         revenue_streams: 'revenue_streams' + code
+    //     }
+    // });
     
+    var code = randomstring.generate(7);
+    Canvas.create({
+        code: code,
+        data: req.body.result.parameters
+    });
+
     if (req.body.result.action === 'canvas') {
-        
-        // Canvas.create({
-        //     code: code,
-        //     data: {
-        //         key_partners: 'key_partners' + code,
-        //         key_activities: 'key_activities' + code,
-        //         key_resources: 'key_resources' + code,
-        //         cost_structure: 'cost_structure' + code,
-        //         value_propositions: 'value_propositions' + code,
-        //         customer_relationships: 'customer_relationships' + code,
-        //         channels: 'channels',
-        //         customer_segments: 'customer_segments' + code,
-        //         revenue_streams: 'revenue_streams' + code
-        //     }
-        // });
-
-        var code = randomstring.generate(7);
-        Canvas.create({
-            code: code,
-            data: req.body.result.parameters
-        });
-
         res.json({
             "speech": "Acabamos de montar um pequeno modelo de negócio para você, olhe aqui.",
             "displayText": "Acabamos de montar um pequeno modelo de negócio para você, olhe aqui.",
             "source": "connect-api",
             "data": {
-                url: 'https://uol-econnect.herokuapp.com/canvas/' + code,
+                // url: 'https://uol-econnect.herokuapp.com/canvas/' + code,
+                url: 'http://http://hackauol02.xyz//canvas/' + code,
                 messages: [
                     "O marketing também é muito importante, faça um site para divulgar o seu negócio! UOL oferece um amplo catálogo de produtos que podem te ajudar! Você pode criar seu site, sua loja online ou um e-mail profissional, pensa só, celso@sualoja.com.br, bacana né!?"
+                ]
+            }
+        });
+    }
+
+    if (req.body.result.action === 'business') {
+        res.json({
+            "speech": "Que bom! Você se enquadra no MEI - Microempreendedor Individual. Nesse tipo de empresa você pagará apenas o valor fixo mensal de R$ 45,00 (comércio ou indústria), R$ 49,00 (prestação de serviços) ou R$ 50,00 (comércio e serviços).",
+            "displayText": "Que bom! Você se enquadra no MEI - Microempreendedor Individual. Nesse tipo de empresa você pagará apenas o valor fixo mensal de R$ 45,00 (comércio ou indústria), R$ 49,00 (prestação de serviços) ou R$ 50,00 (comércio e serviços).",
+            "source": "connect-api",
+            "data": {
+                // url: 'https://uol-econnect.herokuapp.com/canvas/' + code,
+                // url: 'http://http://hackauol02.xyz//canvas/' + code,
+                messages: [
+                    {
+                        message: "Para abrir empresa basta accessar o site",
+                        data: {url: "http://www.portaldoempreendedor.gov.br"}
+                    },
+                    {
+                        message: "Clicar no icone",
+                        data: {image: "http://www.portaldoempreendedor.gov.br/mei-microempreendedor-individual/iamgens/btn-formalizar2.png"}
+                    },
+                    {
+                        message: "A lista de documentos necessários é:",
+                        data: {list: ["Número do CPF", "Data de nascimento do titular", "Número do título de eleitor", "Último recibo de entrega da Declaração Anual de Imposto de RendaPessoa Física – DIRPF, caso esteja obrigado a entregar a DIRPF"]}
+                    },
                 ]
             }
         });
