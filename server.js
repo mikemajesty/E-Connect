@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
 // configuration ===============================================================
-if (process.env.NODE_PORT == 'production') {
+if (process.env.NODE_ENV == 'production') {
     mongoose.connect('mongodb://heorku:heroku@ds111178.mlab.com:11178/heroku_ssmwrnts');
 } else {
     mongoose.connect('mongodb://mongo/econnect');
