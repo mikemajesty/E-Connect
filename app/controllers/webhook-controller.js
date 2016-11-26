@@ -42,8 +42,8 @@ router.post('/', function (req, res) {
 
     if (req.body.result.action === 'business') {
         res.json({
-            "speech": "Seu faturamento é de aproximadamente R$ " + parseFloat(req.body.result.parameters.value) * 28 + " por mês, você se enquadra no MEI - Microempreendedor Individual. Nesse tipo de empresa você pagará apenas o valor fixo mensal de R$ 45,00 (comércio ou indústria), R$ 49,00 (prestação de serviços) ou R$ 50,00 (comércio e serviços). Para abrir empresa basta accessar o site abaixo.",
-            "displayText": "Seu faturamento é de aproximadamente R$ " + parseFloat(req.body.result.parameters.value) * 28 + " por mês, você se enquadra no MEI - Microempreendedor Individual. Nesse tipo de empresa você pagará apenas o valor fixo mensal de R$ 45,00 (comércio ou indústria), R$ 49,00 (prestação de serviços) ou R$ 50,00 (comércio e serviços). Para abrir empresa basta accessar o site abaixo.",
+            "speech": "Seu faturamento é de aproximadamente R$ " + parseFloat(req.body.result.parameters.value) * 28 + " por mês, você se enquadra no MEI - Microempreendedor Individual. Nesse tipo de empresa você pagará apenas o valor fixo mensal de R$ 45,00 (comércio ou indústria), R$ 49,00 (prestação de serviços) ou R$ 50,00 (comércio e serviços). Para abrir empresa basta acessar o site abaixo.",
+            "displayText": "Seu faturamento é de aproximadamente R$ " + parseFloat(req.body.result.parameters.value) * 28 + " por mês, você se enquadra no MEI - Microempreendedor Individual. Nesse tipo de empresa você pagará apenas o valor fixo mensal de R$ 45,00 (comércio ou indústria), R$ 49,00 (prestação de serviços) ou R$ 50,00 (comércio e serviços). Para abrir empresa basta acessar o site abaixo.",
             "source": "connect-api",
             "data": {
                 url: "http://www.portaldoempreendedor.gov.br",
@@ -54,7 +54,7 @@ router.post('/', function (req, res) {
                     },
                     {
                         message: "A lista de documentos necessários é:",
-                        data: {list: ["Número do CPF", "Data de nascimento do titular", "Número do título de eleitor", "Último recibo de entrega da Declaração Anual de Imposto de RendaPessoa Física – DIRPF, caso esteja obrigado a entregar a DIRPF"]}
+                        data: {list: ["Número do CPF", "Data de nascimento do titular", "Número do título de eleitor", "Último recibo de entrega da Declaração Anual de Imposto de Renda Pessoa Física – DIRPF, caso esteja obrigado a entregar a DIRPF"]}
                     },
                     {
                         message: "Antes de abrir a empresa, o que acha de validarmos o seu negócio ?",
