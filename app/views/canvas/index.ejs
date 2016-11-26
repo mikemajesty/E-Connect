@@ -218,13 +218,10 @@
         .tile-pink.active {
         background-color: #B0C4DE;
         }
-        .tile-pink:focus {
-        background-color: #c2185b;
-        }
         .tile-pink:disabled,
         .tile-pink.disabled,
         .tile-pink[disabled] {
-        background-color: #b3b3b3;
+        background-color: #B4C8D8;
         }
         .tile-pink .ink {
         /*background-color: #ad1457;*/
@@ -432,6 +429,15 @@
 <body>
 	<div class="dashboard display-animation" style="margin: 0 auto; width: 100%;display:flex;flex-direction:column">
         <div style="display:flex">
+            <button onclick="previousClick()">
+                Anterior
+            </button>
+
+            <button onclick="nextClick()">
+                Próximo
+            </button>
+        </div>
+        <div style="display:flex">
             <a class="tile tile-lg tile-pink ripple-effect" href="#" style="margin-right:10px">
                 <span class="content-wrapper">
                     <span class="tile-content">
@@ -448,7 +454,7 @@
                 </span>
             </a>
             <div style="display:flex;flex-direction:column;margin-right:10px;width:100%">
-                <a class="tile tile-sqr tile-pink ripple-effect" href="#">
+                <a class="tile tile-sqr tile-pink ripple-effect" href="#" disabled>
                     <span class="content-wrapper">
                         <span class="tile-content">
                             <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
@@ -462,7 +468,7 @@
                         <p class="text-info">* As atividades mais importantes para executar a proposição de valor da empresa.</p>
                     </span>
                 </a>
-                <a class="tile tile-sqr tile-pink ripple-effect" href="#" style="margin-top:10px">
+                <a class="tile tile-sqr tile-pink ripple-effect" href="#" style="margin-top:10px" disabled>
                     <span class="content-wrapper">
                         <span class="tile-content">
                             <i class="fa fa-balance-scale" aria-hidden="true"></i>
@@ -477,7 +483,7 @@
                     </span>
                 </a>
             </div>
-            <a class="tile tile-lg tile-pink ripple-effect" href="#" style="margin-right:10px">
+            <a class="tile tile-lg tile-pink ripple-effect" href="#" style="margin-right:10px" disabled>
                 <span class="content-wrapper">
                     <span class="tile-content">
                         <i class="fa fa-gift" aria-hidden="true"></i>
@@ -493,7 +499,7 @@
                
             </a>
             <div style="display:flex;flex-direction:column;margin-right:10px;width:100%">
-                <a class="tile tile-sqr tile-pink ripple-effect" href="#">
+                <a class="tile tile-sqr tile-pink ripple-effect" href="#" disabled>
                     <span class="content-wrapper">
                         <span class="tile-content">
                             <i class="fa fa-handshake-o" aria-hidden="true"></i>
@@ -507,7 +513,7 @@
                         <p class="text-info">* A empresa estabelece ligações entre si e os seus diferentes segmentos de clientes.</p>
                     </span>
                 </a>
-                <a class="tile tile-sqr tile-pink ripple-effect" href="#" style="margin-top:10px">
+                <a class="tile tile-sqr tile-pink ripple-effect" href="#" style="margin-top:10px" disabled>
                     <span class="content-wrapper">
                         <span class="tile-content">
                             <i class="fa fa-truck" aria-hidden="true"></i>
@@ -522,7 +528,7 @@
                     </span>
                 </a>
             </div>
-            <a class="tile tile-lg tile-pink ripple-effect" href="#">
+            <a class="tile tile-lg tile-pink ripple-effect" href="#" disabled>
                 <span class="content-wrapper">
                     <span class="tile-content">
                         <i class="fa fa-user" aria-hidden="true"></i>
@@ -538,7 +544,7 @@
             </a>
         </div>
         <div style="display:flex">
-            <a class="tile tile-sm tile-pink ripple-effect" href="#" style="margin-right:10px;display:flex">
+            <a class="tile tile-sm tile-pink ripple-effect" href="#" style="margin-right:10px;display:flex" disabled>
                 <span class="content-wrapper">
                     <span class="tile-content">
                         <i class="fa fa-tasks" aria-hidden="true"></i>
@@ -552,7 +558,7 @@
                     <p class="text-info">* As consequências monetárias dos meios utilizados no modelo de negócios.</p>
                 </span>
             </a>
-            <a class="tile tile-sm tile-pink ripple-effect" href="#" style="display:flex">
+            <a class="tile tile-sm tile-pink ripple-effect" href="#" style="display:flex" disabled>
                 <span class="content-wrapper">
                     <span class="tile-content">
                         <i class="fa fa-money" aria-hidden="true"></i>
@@ -571,6 +577,25 @@
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript">
+        var current = 0;
+
+        function previousClick() {
+            
+            if (current - 1 >= 0) {
+                $("a.tile").attr("disabled", "disabled");
+                current--;
+                $($("a.tile")[current]).removeAttr("disabled");
+            }
+        }
+
+        function nextClick() {
+            if (current + 1 < $("a.tile").length) {
+                $("a.tile").attr("disabled", "disabled");
+                current++;
+                $($("a.tile")[current]).removeAttr("disabled");
+            }
+        }
+
         /**
         * Created by Kupletsky Sergey on 16.09.14.
         *
