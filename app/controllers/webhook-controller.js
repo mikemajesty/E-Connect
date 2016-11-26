@@ -46,12 +46,8 @@ router.post('/', function (req, res) {
             "displayText": "Seu faturamento é de aproximadamente R$ " + parseFloat(req.body.result.parameters.value) * 28 + " por mês, você se enquadra no MEI - Microempreendedor Individual. Nesse tipo de empresa você pagará apenas o valor fixo mensal de R$ 45,00 (comércio ou indústria), R$ 49,00 (prestação de serviços) ou R$ 50,00 (comércio e serviços). Para abrir empresa basta acessar o site abaixo.",
             "source": "connect-api",
             "data": {
-                url: "http://www.portaldoempreendedor.gov.br",
+                url: "http://www.portaldoempreendedor.gov.br/mei-microempreendedor-individual/formalize-se",
                 "messages": [
-                    {
-                        message: "Clicar no icone",
-                        data: {image: "http://www.portaldoempreendedor.gov.br/mei-microempreendedor-individual/iamgens/btn-formalizar2.png"}
-                    },
                     {
                         message: "A lista de documentos necessários é:",
                         data: {list: ["Número do CPF", "Data de nascimento do titular", "Número do título de eleitor", "Último recibo de entrega da Declaração Anual de Imposto de Renda Pessoa Física – DIRPF, caso esteja obrigado a entregar a DIRPF"]}
