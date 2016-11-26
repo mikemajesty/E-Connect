@@ -1,8 +1,16 @@
 angular.module('controllers', [])
 
-	.controller('chatController', ['$scope','$http', function($scope, $http) {
+	.controller('chatController', ['$scope','$http', '$timeout', function($scope, $http, $timeout) {
 		$scope.messages = [];
 		$scope.message = '';
+
+		$timeout(function() {
+			$scope.messages.push({
+				bot: true,
+				message: 'Boa tarde, como posso te ajudar ?',
+				date: new Date()
+			});
+		}, 1500);
 
 		$scope.sendMessage = function() {
 			$scope.messages.push({
