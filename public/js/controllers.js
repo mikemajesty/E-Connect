@@ -38,7 +38,7 @@ angular.module('controllers', [])
 						date: new Date()
 					});
 
-					if (response.data.result.fulfillment.data.messages.length > 0) {
+					if (response.data.result.fulfillment.data && response.data.result.fulfillment.data.messages.length > 0) {
 						response.data.result.fulfillment.data.messages.forEach(function(m, i) {
 							$timeout(function() {
 								$scope.messages.push({

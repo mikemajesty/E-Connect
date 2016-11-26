@@ -42,8 +42,8 @@ router.post('/', function (req, res) {
 
     if (req.body.result.action === 'business') {
         res.json({
-            "speech": "Seu faturamento é de aproximadamente R$ " + req.body.result.parameters * 28 + " por mês, você se enquadra no MEI - Microempreendedor Individual. Nesse tipo de empresa você pagará apenas o valor fixo mensal de R$ 45,00 (comércio ou indústria), R$ 49,00 (prestação de serviços) ou R$ 50,00 (comércio e serviços).",
-            "displayText": "Seu faturamento é de aproximadamente R$ " + req.body.result.parameters * 28 + " por mês, você se enquadra no MEI - Microempreendedor Individual. Nesse tipo de empresa você pagará apenas o valor fixo mensal de R$ 45,00 (comércio ou indústria), R$ 49,00 (prestação de serviços) ou R$ 50,00 (comércio e serviços).",
+            "speech": "Seu faturamento é de aproximadamente R$ " + parseFloat(req.body.result.parameters.value) * 28 + " por mês, você se enquadra no MEI - Microempreendedor Individual. Nesse tipo de empresa você pagará apenas o valor fixo mensal de R$ 45,00 (comércio ou indústria), R$ 49,00 (prestação de serviços) ou R$ 50,00 (comércio e serviços).",
+            "displayText": "Seu faturamento é de aproximadamente R$ " + parseFloat(req.body.result.parameters.value) * 28 + " por mês, você se enquadra no MEI - Microempreendedor Individual. Nesse tipo de empresa você pagará apenas o valor fixo mensal de R$ 45,00 (comércio ou indústria), R$ 49,00 (prestação de serviços) ou R$ 50,00 (comércio e serviços).",
             "source": "connect-api",
             "data": {
                 // url: 'https://uol-econnect.herokuapp.com/canvas/' + code,
