@@ -54,12 +54,12 @@
 				<div class="chat-history">
 					<ul>
 						<li class="clearfix" ng-repeat="m in messages" id="message-{{ $index }}" scroll-to-last="message-{{ $index }}">
-							<div class="message-data {{$index % 2 == 0 ? 'align-right' : ''}}">
-								<span ng-if="$index % 2 == 1" class="message-data-name"><b>{{m.bot ? 'Consultor Virtual' : 'Você'}}</b> - </span>
+							<div class="message-data {{m.bot ? 'align-right' : ''}}">
+								<span ng-if="!m.bot" class="message-data-name"><b>Você</b> - </span>
 								<span class="message-data-time" style="color: #333f4d;">{{m.date | date: 'dd/MM/yyyy hh:mm:ss'}}</span>
-								<span ng-if="$index % 2 == 0" class="message-data-name"> - <b>{{m.bot ? 'Consultor Virtual' : 'Você'}}</b></span>
+								<span ng-if="m.bot" class="message-data-name"> - <b>Consultor Virtual</b></span>
 							</div>
-							<div class="message {{$index % 2 == 0 ? 'other-message float-right' : 'my-message'}}">
+							<div class="message {{m.bot ? 'other-message float-right' : 'my-message'}}">
 								{{m.message}}
 								<a ng-if="m.data && m.data.url" href="{{m.data.url}}" target="_blank">
 									{{m.data.url}}
