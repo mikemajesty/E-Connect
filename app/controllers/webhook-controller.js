@@ -42,17 +42,14 @@ router.post('/', function (req, res) {
 
     if (req.body.result.action === 'business') {
         res.json({
-            "speech": "Seu faturamento é de aproximadamente R$ " + parseFloat(req.body.result.parameters.value) * 28 + " por mês, você se enquadra no MEI - Microempreendedor Individual. Nesse tipo de empresa você pagará apenas o valor fixo mensal de R$ 45,00 (comércio ou indústria), R$ 49,00 (prestação de serviços) ou R$ 50,00 (comércio e serviços).",
-            "displayText": "Seu faturamento é de aproximadamente R$ " + parseFloat(req.body.result.parameters.value) * 28 + " por mês, você se enquadra no MEI - Microempreendedor Individual. Nesse tipo de empresa você pagará apenas o valor fixo mensal de R$ 45,00 (comércio ou indústria), R$ 49,00 (prestação de serviços) ou R$ 50,00 (comércio e serviços).",
+            "speech": "Seu faturamento é de aproximadamente R$ " + parseFloat(req.body.result.parameters.value) * 28 + " por mês, você se enquadra no MEI - Microempreendedor Individual. Nesse tipo de empresa você pagará apenas o valor fixo mensal de R$ 45,00 (comércio ou indústria), R$ 49,00 (prestação de serviços) ou R$ 50,00 (comércio e serviços). Para abrir empresa basta accessar o site abaixo.",
+            "displayText": "Seu faturamento é de aproximadamente R$ " + parseFloat(req.body.result.parameters.value) * 28 + " por mês, você se enquadra no MEI - Microempreendedor Individual. Nesse tipo de empresa você pagará apenas o valor fixo mensal de R$ 45,00 (comércio ou indústria), R$ 49,00 (prestação de serviços) ou R$ 50,00 (comércio e serviços). Para abrir empresa basta accessar o site abaixo.",
             "source": "connect-api",
             "data": {
                 // url: 'https://uol-econnect.herokuapp.com/canvas/' + code,
                 // url: 'http://http://hackauol02.xyz//canvas/' + code,
+                url: "http://www.portaldoempreendedor.gov.br",
                 "messages": [
-                    {
-                        message: "Para abrir empresa basta accessar o site",
-                        data: {url: "http://www.portaldoempreendedor.gov.br"}
-                    },
                     {
                         message: "Clicar no icone",
                         data: {image: "http://www.portaldoempreendedor.gov.br/mei-microempreendedor-individual/iamgens/btn-formalizar2.png"}

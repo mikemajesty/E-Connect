@@ -67,6 +67,12 @@
 								</a>
 
 								<img ng-if="m.data && m.data.image" ng-src="{{m.data.image}}"></img>
+
+								<ul ng-if="m.data && m.data.list">
+									<li style="list-style-type:circle;margin-left: 25px;" ng-repeat="i in m.data.list">
+										{{i}}
+									</li>
+								</ul>
 							</div>
 						</li>
 					</ul>
