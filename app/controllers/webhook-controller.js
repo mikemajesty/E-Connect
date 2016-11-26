@@ -5,7 +5,7 @@ var randomstring = require("randomstring");
 
 router.post('/', function (req, res) {
     
-    if (req.body.results.action === 'canvas') {
+    if (req.body.result.action === 'canvas') {
         
         // Canvas.create({
         //     code: code,
@@ -25,7 +25,7 @@ router.post('/', function (req, res) {
         var code = randomstring.generate(7);
         Canvas.create({
             code: code,
-            data: req.body.results.parameters
+            data: req.body.result.parameters
         });
 
         res.json({
