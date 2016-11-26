@@ -66,6 +66,7 @@
 				<div class="chat-history">
 					<ul>
 						<li class="clearfix" ng-repeat="m in messages">
+							{{m}}
 							<div class="message-data {{$index % 2 == 0 ? 'align-right' : ''}}">
 								<span class="message-data-time">10:10 AM, Today</span> &nbsp; &nbsp;
 								<span class="message-data-name">{{m.bot ? 'Consultor Virtual' : 'Você'}}</span> <i class="fa fa-circle online"></i>
@@ -73,6 +74,9 @@
 							</div>
 							<div class="message {{$index % 2 == 0 ? 'other-message float-right' : 'my-message'}}">
 								{{m.message}}
+								<a ng-if="m.data && m.data.url" href="{{m.data.url}}">
+									{{m.data.url}}
+								</a>
 							</div>
 						</li>
 					</ul>
@@ -80,7 +84,7 @@
 				<form>
 					<div class="input-area">
 						<div class="input-wrapper" style="width: 88%;">
-							<input style="width: 90%; height: 36px !important;" placeholder="Digite suas perguntas" type="text" value="" ng-model="message">
+							<input style="width: 90%; height: 36px !important;" placeholder="Digite suas perguntas" type="text" value="" ng-model="message" autofocus>
 						</div>
 						<input type="submit" style="padding-left: 11px;" value="Enviar" class="send-btn" ng-click="sendMessage()">
 					</div>

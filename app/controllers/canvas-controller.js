@@ -4,7 +4,7 @@ var router = express.Router();
 var Canvas = require('../models/canvas');
 
 router.get('/:code', function (req, res) {
-    
+
     Canvas.create({
         code: '123',
         data: {
@@ -20,7 +20,7 @@ router.get('/:code', function (req, res) {
         }
     });
 
-    Canvas.find({code: 'code'}, function (err, canvas) {
+    Canvas.find({code: request.params.code}, function (err, canvas) {
         if (err) {
             res.send(err);
         }
