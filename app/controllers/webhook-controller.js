@@ -57,7 +57,7 @@ router.post('/', function (req, res) {
                         data: {list: ["Número do CPF", "Data de nascimento do titular", "Número do título de eleitor", "Último recibo de entrega da Declaração Anual de Imposto de RendaPessoa Física – DIRPF, caso esteja obrigado a entregar a DIRPF"]}
                     },
                     {
-                        message: "Antes de abrir a empresa o que acha de validarmos o seu negócio ?",
+                        message: "Antes de abrir a empresa, o que acha de validarmos o seu negócio ?",
                         data: {url: 'http://http://hackauol02.xyz//canvas/' + code}
                     }
                 ]
