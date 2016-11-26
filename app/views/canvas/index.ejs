@@ -470,9 +470,9 @@
                         <i class="fa fa-gift" aria-hidden="true"></i>
                         <span class="title">Proposta de valor</span>
                     </span>
-                    <% if (cost_structure) { %>
+                    <% if (value_propositions) { %>
                     <ul>
-                        <li><%= cost_structure %></li>
+                        <li><%= value_propositions %></li>
                     </ul>   
                     <% } %>
                 </span>
@@ -484,9 +484,9 @@
                             <i class="fa fa-handshake-o" aria-hidden="true"></i>
                             <span class="title">Relacionamento com o cliente</span>
                         </span>
-                        <% if (value_propositions) { %>
+                        <% if (customer_relationships) { %>
                         <ul>
-                            <li><%= value_propositions %></li>
+                            <li><%= customer_relationships %></li>
                         </ul>  
                         <% } %> 
                     </span>
@@ -497,9 +497,9 @@
                             <i class="fa fa-truck" aria-hidden="true"></i>
                             <span class="title">Canais de distribuição</span>
                         </span>
-                        <% if (customer_relationships) { %>
+                        <% if (channels) { %>
                         <ul>
-                            <li><%= customer_relationships %></li>
+                            <li><%= channels %></li>
                         </ul>    
                         <% } %>
                     </span>
@@ -511,9 +511,9 @@
                         <i class="fa fa-user" aria-hidden="true"></i>
                         <span class="title">Segmentos de clientes</span>
                     </span>
-                    <% if (channels) { %>
+                    <% if (customer_segments) { %>
                     <ul>
-                        <li><%= channels %></li>
+                        <li><%= customer_segments %></li>
                     </ul>      
                     <% } %>
                 </span>
@@ -526,9 +526,9 @@
                         <i class="fa fa-tasks" aria-hidden="true"></i>
                         <span class="title">Estrutura de custos</span>
                     </span>
-                    <% if (customer_segments) { %>
+                    <% if (cost_structure) { %>
                     <ul>
-                        <li><%= customer_segments %></li>
+                        <li><%= cost_structure %></li>
                     </ul>    
                     <% } %>
                 </span>
