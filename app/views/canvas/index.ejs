@@ -44,10 +44,11 @@
         /* -- Google typography ------------------------------- */
         .title {
         font-size: 15px;
-        color: black;
+        color: #333;
         text-transform: inherit;
         letter-spacing: inherit;
         top: -100px;
+        font-weight: 500;
         }
 
         /* -- Ripple-effect ----------------------------------- */
@@ -428,9 +429,11 @@
                         <i class="fa fa-link" aria-hidden="true"></i>
                         <span class="title">Parceiro chave</span>
                     </span>
+                    <% if (key_partners) { %>
                     <ul>
                         <li><%= key_partners %></li>
                     </ul>
+                    <% } %>
                 </span>
             </a>
             <div style="display:flex;flex-direction:column;margin-right:10px;width:100%">
@@ -440,9 +443,11 @@
                             <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
                             <span class="title">Atividades chaves</span>
                         </span>
+                        <% if (key_activities) { %>
                         <ul>
                             <li><%= key_activities %></li>
                         </ul>
+                        <% } %>
                     </span>
                 </a>
                 <a class="tile tile-sqr tile-pink ripple-effect" href="#" style="margin-top:10px">
@@ -451,9 +456,11 @@
                             <i class="fa fa-balance-scale" aria-hidden="true"></i>
                             <span class="title">Recursos chaves</span>
                         </span>
+                        <% if (key_resources) { %>
                         <ul>
                             <li><%= key_resources %></li>
                         </ul>     
+                        <% } %>
                     </span>
                 </a>
             </div>
@@ -463,9 +470,11 @@
                         <i class="fa fa-gift" aria-hidden="true"></i>
                         <span class="title">Proposta de valor</span>
                     </span>
+                    <% if (cost_structure) { %>
                     <ul>
                         <li><%= cost_structure %></li>
                     </ul>   
+                    <% } %>
                 </span>
             </a>
             <div style="display:flex;flex-direction:column;margin-right:10px;width:100%">
@@ -475,9 +484,11 @@
                             <i class="fa fa-handshake-o" aria-hidden="true"></i>
                             <span class="title">Relacionamento com o cliente</span>
                         </span>
+                        <% if (value_propositions) { %>
                         <ul>
                             <li><%= value_propositions %></li>
-                        </ul>   
+                        </ul>  
+                        <% } %> 
                     </span>
                 </a>
                 <a class="tile tile-sqr tile-pink ripple-effect" href="#" style="margin-top:10px">
@@ -486,21 +497,25 @@
                             <i class="fa fa-truck" aria-hidden="true"></i>
                             <span class="title">Canais de distribuição</span>
                         </span>
+                        <% if (customer_relationships) { %>
                         <ul>
                             <li><%= customer_relationships %></li>
                         </ul>    
+                        <% } %>
                     </span>
                 </a>
             </div>
             <a class="tile tile-lg tile-pink ripple-effect" href="#">
                 <span class="content-wrapper">
                     <span class="tile-content">
-                        <i class="fa fa-eye" aria-hidden="true"></i>
+                        <i class="fa fa-user" aria-hidden="true"></i>
                         <span class="title">Segmentos de clientes</span>
                     </span>
+                    <% if (channels) { %>
                     <ul>
                         <li><%= channels %></li>
                     </ul>      
+                    <% } %>
                 </span>
             </a>
         </div>
@@ -511,9 +526,11 @@
                         <i class="fa fa-tasks" aria-hidden="true"></i>
                         <span class="title">Estrutura de custos</span>
                     </span>
+                    <% if (customer_segments) { %>
                     <ul>
                         <li><%= customer_segments %></li>
                     </ul>    
+                    <% } %>
                 </span>
             </a>
             <a class="tile tile-sm tile-pink ripple-effect" href="#" style="display:flex">
@@ -522,9 +539,11 @@
                         <i class="fa fa-money" aria-hidden="true"></i>
                         <span class="title">Fluxo de receitas</span>
                     </span>
+                    <% if (revenue_streams) { %>
                     <ul>
                         <li><%= revenue_streams %></li>
                     </ul>    
+                    <% } %>
                 </span>
             </a>
         </div>
