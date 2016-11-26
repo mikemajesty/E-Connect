@@ -39,13 +39,16 @@ angular.module('controllers', [])
 					});
 
 					if (response.data.result.fulfillment.data.messages.length > 0) {
-						$timeout(function() {
-							$scope.messages.push({
-								bot: true,
-								message: response.data.result.fulfillment.data.messages[0],
-								date: new Date()
-							});
-						}, 1500);
+						response.data.result.fulfillment.data.messages.forEach(function(m, i) {
+							$timeout(function() {
+								$scope.messages.push({
+									bot: true,
+									message: m.message,
+									date: new Date(),
+									data: m.data
+								});
+							}, 1500 * i);
+						});
 					}
 				}, 1000);
 			});
