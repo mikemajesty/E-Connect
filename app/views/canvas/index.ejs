@@ -161,6 +161,7 @@
         position: absolute;
         display: block;
         top: 0;
+        bottom: 0;
         width: 100%;
         -webkit-transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
         -o-transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
@@ -289,6 +290,14 @@
         .tile.tile-sqr {
         width: 100%;
         height: 100%;
+        }
+        .text-info{
+            right: 10px;
+            position: absolute;
+            bottom: 0;
+            left: 10px;
+            font-size: 12px;
+            color: #888;
         }
         .tile.tile-sqr .content-wrapper .tile-content .tile-img-bg {
         width: 130px;
@@ -433,7 +442,9 @@
                     <ul>
                         <li><%= key_partners %></li>
                     </ul>
-                    <% } %>
+                    <% } %> 
+                    <p class="text-info">* As alianças de negócios que complementam os outros aspectos do modelo de negócio.</p>
+                    
                 </span>
             </a>
             <div style="display:flex;flex-direction:column;margin-right:10px;width:100%">
@@ -448,6 +459,7 @@
                             <li><%= key_activities %></li>
                         </ul>
                         <% } %>
+                        <p class="text-info">* As atividades mais importantes para executar a proposição de valor da empresa.</p>
                     </span>
                 </a>
                 <a class="tile tile-sqr tile-pink ripple-effect" href="#" style="margin-top:10px">
@@ -461,6 +473,7 @@
                             <li><%= key_resources %></li>
                         </ul>     
                         <% } %>
+                        <p class="text-info">* Os recursos que são necessários para criar valor para o cliente.</p>
                     </span>
                 </a>
             </div>
@@ -475,7 +488,9 @@
                         <li><%= cost_structure %></li>
                     </ul>   
                     <% } %>
+                    <p class="text-info">* As consequências monetárias dos meios utilizados no modelo de negócios.</p>
                 </span>
+               
             </a>
             <div style="display:flex;flex-direction:column;margin-right:10px;width:100%">
                 <a class="tile tile-sqr tile-pink ripple-effect" href="#">
@@ -488,7 +503,8 @@
                         <ul>
                             <li><%= value_propositions %></li>
                         </ul>  
-                        <% } %> 
+                        <% } %>
+                        <p class="text-info">* A empresa estabelece ligações entre si e os seus diferentes segmentos de clientes.</p>
                     </span>
                 </a>
                 <a class="tile tile-sqr tile-pink ripple-effect" href="#" style="margin-top:10px">
@@ -502,6 +518,7 @@
                             <li><%= customer_relationships %></li>
                         </ul>    
                         <% } %>
+                         <p class="text-info">* O meio pelo qual uma empresa fornece produtos e serviços aos clientes.</p>
                     </span>
                 </a>
             </div>
@@ -516,6 +533,7 @@
                         <li><%= channels %></li>
                     </ul>      
                     <% } %>
+                    <p class="text-info">* O público-alvo para os produtos e serviços de uma empresa.</p>
                 </span>
             </a>
         </div>
@@ -531,6 +549,7 @@
                         <li><%= customer_segments %></li>
                     </ul>    
                     <% } %>
+                    <p class="text-info">* As consequências monetárias dos meios utilizados no modelo de negócios.</p>
                 </span>
             </a>
             <a class="tile tile-sm tile-pink ripple-effect" href="#" style="display:flex">
@@ -544,6 +563,7 @@
                         <li><%= revenue_streams %></li>
                     </ul>    
                     <% } %>
+                    <p class="text-info">* A forma como a empresa ganha dinheiro através de uma variedade de fluxos de receitas.</p>
                 </span>
             </a>
         </div>
