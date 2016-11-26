@@ -127,7 +127,7 @@ b {
   border-radius: 6px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
   overflow: hidden;
-  min-height: 800px;
+  min-height: 600px;
   position: relative;
 }
 .window-title {
@@ -177,7 +177,7 @@ b {
   padding: 30px 30px 20px;
   border-bottom: 2px solid white;
   overflow-y: scroll;
-  height: 650px;
+  height: 450px;
 }
 .chat-history .message-data {
   margin-bottom: 15px;
