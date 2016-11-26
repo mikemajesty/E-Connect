@@ -5,15 +5,23 @@ angular.module('controllers', [])
 		$scope.message = '';
 
 		$scope.sendMessage = function() {
-			$scope.messages.push($scope.message);
+			$scope.messages.push({
+				bot: false,
+				message: $scope.message
+			});
 			$http.post('/api/chat/message', {message: $scope.message}).then(function(response) {
 				var messages = response.data.result.fulfillment.messages;
-
+				var message = null;
 				if (Array.isArray(messages)) {
-					$scope.messages.push(messages[0].speech);
+					message = messages[0].speech;
 				} else {
-					$scope.messages.push(messages.speech);
-				}		
+					message = messages.speech;
+				}
+
+				$scope.messages.push({
+					bot: true,
+					message: message
+				});
 			});
 		};
 	}]);

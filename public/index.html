@@ -64,43 +64,42 @@
 				</div>
 			</div>
 
-<!-- Começa o chat aqui -->
 			<div class="chat-area">
-<!-- Aqui integra a parte do outro layout -->
         
-      <div class="chat-history">
-        <ul>
-          <li class="clearfix">
-            <div class="message-data align-right">
-              <span class="message-data-time" >10:10 AM, Today</span> &nbsp; &nbsp;
-              <span class="message-data-name" >Você</span> <i class="fa fa-circle me"></i>
-              
-            </div>
-            <div class="message other-message float-right">
-             sdfsdgfgaeASGDHFGFARGH
-            </div>
-          </li>
-          
-          <li>
-            <div class="message-data">
-              <span class="message-data-name"><i class="fa fa-circle online"></i> Consultor Virtual</span>
-              <span class="message-data-time">10:12 AM, Today</span>
-            </div>
-            <div class="message my-message">
-              SDDFGDSAREDGHMTETGJ
-            </div>
-          </li>
-        </ul>
-        
-      </div>
-
-<!-- Termina o chat aqui -->				
-				<div class="input-area">
-					<div class="input-wrapper" style="width: 90%;">
-						<input style="width: 90%;" placeholder="Digite suas perguntas" type="text" value="">
-					</div>
-					<input type="button" value="Enviar" class="send-btn">
+				<div class="chat-history">
+					<ul>
+						<li class="clearfix" ng-repeat="m in messages">
+							<div class="message-data {{$index % 2 == 0 ? 'align-right' : ''}}">
+								<span class="message-data-time">10:10 AM, Today</span> &nbsp; &nbsp;
+								<span class="message-data-name">{{m.bot ? 'Consultor Virtual' : 'Você'}}</span> <i class="fa fa-circle online"></i>
+								
+							</div>
+							<div class="message {{$index % 2 == 0 ? 'other-message float-right' : 'my-message'}}">
+								{{m.message}}
+							</div>
+						</li>
+						
+						<!--<li>
+							<div class="message-data">
+								<span class="message-data-name"><i class="fa fa-circle online"></i> Consultor Virtual</span>
+								<span class="message-data-time">10:12 AM, Today</span>
+							</div>
+							<div class="message my-message">
+								SDDFGDSAREDGHMTETGJ
+							</div>
+						</li>-->
+					</ul>
+					
 				</div>
+		
+				<form>
+					<div class="input-area">
+						<div class="input-wrapper" style="width: 90%;">
+							<input style="width: 90%;" placeholder="Digite suas perguntas" type="text" value="" ng-model="message">
+						</div>
+						<input type="submit" value="Enviar" class="send-btn" ng-click="sendMessage()">
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

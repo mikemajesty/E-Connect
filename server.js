@@ -1,4 +1,4 @@
-// set up ======================================================================
+var path = require("path");
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
@@ -13,6 +13,9 @@ if (process.env.NODE_ENV == 'production') {
 } else {
     mongoose.connect('mongodb://mongo/econnect');
 }
+
+app.set('views', path.join(__dirname, 'app/views'));
+app.set('view engine', 'ejs');
 
 app.use(express.static('./public')); 		// set the static files location /public/img will be /img for users
 app.use(morgan('dev')); // log every request to the console
