@@ -29,8 +29,8 @@ router.post('/', function (req, res) {
         });
 
         res.json({
-            "speech": "Montamos um modelo de negócio para você, olhe aqui.",
-            "displayText": "Montamos um modelo de negócio para você, olhe aqui.",
+            "speech": "Acabamos de montar um pequeno modelo de negócio para você, olhe aqui.",
+            "displayText": "Acabamos de montar um pequeno modelo de negócio para você, olhe aqui.",
             "source": "connect-api",
             "data": {
                 url: 'https://uol-econnect.herokuapp.com/canvas/' + code,
