@@ -2,7 +2,7 @@
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
-var port = process.env.NODE_PORT || 8080;
+var port = process.env.PORT || 8080;
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');

@@ -3,7 +3,7 @@ web:
   dockerfile: Dockerfile
   environment:
     - NODE_ENV=development
-    - NODE_PORT=3000
+    - PORT=3000
   volumes:
     - .:/src
   ports:
