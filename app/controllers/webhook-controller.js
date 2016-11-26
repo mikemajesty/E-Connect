@@ -6,7 +6,10 @@ router.post('/', function (req, res) {
     res.json({
         "speech": "Legal",
         "displayText": "Legal",
-        "source": "connect-api"
+        "source": "connect-api",
+        "data": {
+            "teste": "flow"
+        }
     });
 }); 
 
