@@ -1,6 +1,6 @@
 module.exports = function (app) {
     app.use('/api/webhook', require('./controllers/webhook-controller'));
-    // app.use('/api/playlist', require('./api/playlist'));
+    app.use('/api/chat', require('./controllers/chat-controller'));
 
     // api ---------------------------------------------------------------------
     // get all todos
