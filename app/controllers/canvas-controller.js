@@ -20,11 +20,11 @@ router.get('/:code', function (req, res) {
         }
     });
 
-    Canvas.find({code: req.params.code}, function (err, canvas) {
+    Canvas.findOne({code: req.params.code}, function (err, canvas) {
         if (err) {
             res.send(err);
         }
-        console.log(canvas);
+
         res.render('canvas/index', canvas.data);
     });
 }); 
