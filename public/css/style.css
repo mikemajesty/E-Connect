@@ -177,7 +177,7 @@ b {
   padding: 30px 30px 20px;
   border-bottom: 2px solid white;
   overflow-y: scroll;
-  height: 575px;
+  height: 650px;
 }
 .chat-history .message-data {
   margin-bottom: 15px;
@@ -193,7 +193,7 @@ b {
   font-size: 16px;
   border-radius: 7px;
   margin-bottom: 30px;
-  width: 90%;
+  width: 80%;
   position: relative;
 }
 .chat-history .message :after {

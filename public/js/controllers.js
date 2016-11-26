@@ -7,7 +7,8 @@ angular.module('controllers', [])
 		$scope.sendMessage = function() {
 			$scope.messages.push({
 				bot: false,
-				message: $scope.message
+				message: $scope.message,
+				date: new Date()
 			});
 
 			$http.post('/api/chat/message', {message: $scope.message}).then(function(response) {
@@ -23,10 +24,26 @@ angular.module('controllers', [])
 				$scope.messages.push({
 					bot: true,
 					message: message,
-					data: response.data.result.fulfillment.data
+					data: response.data.result.fulfillment.data,
+					date: new Date()
 				});
 			});
 
 			$scope.message = '';
 		};
-	}]);
+	}]).directive('scrollToLast', ['$location', '$anchorScroll', function($location, $anchorScroll){
+  
+		function linkFn(scope, element, attrs){
+			$location.hash(attrs.scrollToLast);
+			$anchorScroll();
+		}
+		
+		return {
+			restrict: 'AE',
+			scope: {
+			
+			},
+			link: linkFn
+		};
+		
+		}]);
