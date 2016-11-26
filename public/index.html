@@ -61,6 +61,7 @@
 							</div>
 							<div class="message {{m.bot ? 'other-message float-right' : 'my-message'}}">
 								{{m.message}}
+								<br/>
 								<a ng-if="m.data && m.data.url" href="{{m.data.url}}" target="_blank">
 									{{m.data.url}}
 								</a>
