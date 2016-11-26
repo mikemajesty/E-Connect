@@ -1,0 +1,17 @@
+web:
+  build: .
+  dockerfile: Dockerfile
+  environment:
+    - NODE_ENV=development
+    - NODE_PORT=3000
+  volumes:
+    - .:/src
+  ports:
+    - "3000:3000"
+  links:
+    - mongo
+
+mongo:
+   image: mongo
+   ports:
+     - "27017:27017"
