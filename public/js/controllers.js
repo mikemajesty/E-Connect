@@ -3,6 +3,7 @@ angular.module('controllers', [])
 	.controller('chatController', ['$scope','$http', '$timeout', function($scope, $http, $timeout) {
 		$scope.messages = [];
 		$scope.message = '';
+		$scope.sessionId = (new Date()).getTime();
 
 		$timeout(function() {
 			$scope.messages.push({
@@ -19,7 +20,7 @@ angular.module('controllers', [])
 				date: new Date()
 			});
 
-			$http.post('/api/chat/message', {message: $scope.message}).then(function(response) {
+			$http.post('/api/chat/message', {message: $scope.message, sessionId: $scope.sessionId}).then(function(response) {
 				var messages = response.data.result.fulfillment.messages;
 				var message = null;
 
@@ -29,12 +30,24 @@ angular.module('controllers', [])
 					message = messages.speech;
 				}
 
-				$scope.messages.push({
-					bot: true,
-					message: message,
-					data: response.data.result.fulfillment.data,
-					date: new Date()
-				});
+				$timeout(function() {
+					$scope.messages.push({
+						bot: true,
+						message: message,
+						data: response.data.result.fulfillment.data,
+						date: new Date()
+					});
+
+					if (response.data.result.fulfillment.data.messages.length > 0) {
+						$timeout(function() {
+							$scope.messages.push({
+								bot: true,
+								message: response.data.result.fulfillment.data.messages[0],
+								date: new Date()
+							});
+						}, 1500);
+					}
+				}, 1000);
 			});
 
 			$scope.message = '';
