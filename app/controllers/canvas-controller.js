@@ -24,7 +24,7 @@ router.get('/:code', function (req, res) {
         if (err) {
             res.send(err);
         }
-
+        console.log(canvas);
         res.render('canvas/index', canvas.data);
     });
 }); 
