@@ -11,6 +11,11 @@
 	<style>
 	</style>
 
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans" />
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jScrollPane/2.0.14/jquery.jscrollpane.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
 	<script src="js/controllers.js"></script>
 	<script src="js/core.js"></script>
@@ -18,12 +23,129 @@
 </head>
 
 <body ng-controller="chatController">
-	<div ng-repeat="m in messages">
+	<!--<div ng-repeat="m in messages">
 		{{m}}
 	</div>
 	<form>
 		<input type="text" class="" placeholder="Mande uma mensagem" ng-model="message">
 		<button type="submit" class="" ng-click="sendMessage()">Enviar</button>
-	</form>
+	</form>-->
+
+	<div class="window-wrapper">
+		<div class="window-title">
+			<div class="dots">
+				<i class="fa fa-circle"></i>
+				<i class="fa fa-circle"></i>
+				<i class="fa fa-circle"></i>
+			</div>
+			<div class="title">
+				<span>Chat - Persona</span>
+			</div>
+			<div class="expand">
+				<i class="fa fa-expand"></i>
+			</div>
+		</div>
+		<div class="window-area">
+			<div class="conversation-list">
+				<ul class="">
+          <li class="item"><a href="#"><i class="fa fa-list-alt"></i><span>Personas e Times</span></a></li>
+					<li class="item active"><a href="#"><i class="fa fa-user"></i><span>Equipe</span><i class="fa fa-times"></i></a></li>
+					<li><a href="#"><i class="fa fa-circle-o online"></i></i><span>Rodolpho</span><i class="fa fa-times"></i></a></li>
+					<li><a href="#"><i class="fa fa-circle-o idle"></i></i><span>Amanda</span><i class="fa fa-times"></i></a></li>
+					<li><a href="#"><i class="fa fa-circle-o offline"></i></i><span>Clark</span><i class="fa fa-times"></i></a></li>
+        </ul>
+				<div class="my-account">
+					<div class="image">
+						<img src="https://secure.gravatar.com/avatar/de76e03aa6b5b0bf675c1e8a990da52f?s=64">
+						<i class="fa fa-circle online"></i>
+					</div>
+					<div class="name">
+						<span>Chat - Persona</span>
+						<i class="fa fa-angle-down"></i>
+						<span class="availability">Disponivel</span>
+					</div>
+
+				</div>
+			</div>
+
+<!-- Começa o chat aqui -->
+			<div class="chat-area">
+				<div class="title"><b>Procurar na conversa</b><i class="fa fa-search"></i></div>
+        
+<!-- Aqui integra a parte do outro layout -->
+        
+      <div class="chat-history">
+        <ul>
+          <li class="clearfix">
+            <div class="message-data align-right">
+              <span class="message-data-time" >10:10 AM, Today</span> &nbsp; &nbsp;
+              <span class="message-data-name" >Olia</span> <i class="fa fa-circle me"></i>
+              
+            </div>
+            <div class="message other-message float-right">
+              Hi Vincent, how are you? How is the project coming along?
+            </div>
+          </li>
+          
+          <li>
+            <div class="message-data">
+              <span class="message-data-name"><i class="fa fa-circle online"></i> Vincent</span>
+              <span class="message-data-time">10:12 AM, Today</span>
+            </div>
+            <div class="message my-message">
+              Are we meeting today? Project has been already finished and I have results to show you.
+            </div>
+          </li>
+          
+          <li class="clearfix">
+            <div class="message-data align-right">
+              <span class="message-data-time" >10:14 AM, Today</span> &nbsp; &nbsp;
+              <span class="message-data-name" >Olia</span> <i class="fa fa-circle me"></i>
+              
+            </div>
+            <div class="message other-message float-right">
+              Well I am not sure. The rest of the team is not here yet. Maybe in an hour or so? Have you faced any problems at the last phase of the project?
+            </div>
+          </li>
+          
+          <li>
+            <div class="message-data">
+              <span class="message-data-name"><i class="fa fa-circle online"></i> Vincent</span>
+              <span class="message-data-time">10:20 AM, Today</span>
+            </div>
+            <div class="message my-message">
+              Actually everything was fine. I'm very excited to show this to our team.
+            </div>
+          </li>
+          
+          <li>
+            <div class="message-data">
+              <span class="message-data-name"><i class="fa fa-circle online"></i> Vincent</span>
+              <span class="message-data-time">10:31 AM, Today</span>
+            </div>
+            <i class="fa fa-circle online"></i>
+            <i class="fa fa-circle online" style="color: #AED2A6"></i>
+            <i class="fa fa-circle online" style="color:#DAE9DA"></i>
+          </li>
+          
+        </ul>
+        
+      </div>
+        
+        
+        
+        
+<!-- Termina o chat aqui -->				
+				<div class="input-area">
+					<div class="input-wrapper">
+						<input type="text" value="">
+						<i class="fa fa-smile-o"></i>
+						<i class="fa fa-paperclip"></i>
+					</div>
+					<input type="button" value="Enviar" class="send-btn">
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
