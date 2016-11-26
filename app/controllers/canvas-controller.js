@@ -1,18 +1,31 @@
 var express = require('express');
 var app = express();
 var router = express.Router();
+var Canvas = require('../models/canvas');
 
 router.get('/:code', function (req, res) {
-    res.render('canvas/index', {
-        key_partners: 'key_partners',
-        key_activities: 'key_activities',
-        key_resources: 'key_resources',
-        cost_structure: 'cost_structure',
-        value_propositions: 'value_propositions',
-        customer_relationships: 'customer_relationships',
-        channels: 'channels',
-        customer_segments: 'customer_segments',
-        revenue_streams: 'revenue_streams'
+    
+    Canvas.create({
+        code: '123',
+        data: {
+            key_partners: 'key_partners',
+            key_activities: 'key_activities',
+            key_resources: 'key_resources',
+            cost_structure: 'cost_structure',
+            value_propositions: 'value_propositions',
+            customer_relationships: 'customer_relationships',
+            channels: 'channels',
+            customer_segments: 'customer_segments',
+            revenue_streams: 'revenue_streams'
+        }
+    });
+
+    Canvas.find({code: 'code'}, function (err, canvas) {
+        if (err) {
+            res.send(err);
+        }
+
+        res.render('canvas/index', canvas.data);
     });
 }); 
 
