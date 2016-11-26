@@ -20,7 +20,7 @@ router.get('/:code', function (req, res) {
         }
     });
 
-    Canvas.find({code: request.params.code}, function (err, canvas) {
+    Canvas.find({code: req.params.code}, function (err, canvas) {
         if (err) {
             res.send(err);
         }

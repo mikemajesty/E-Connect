@@ -74,7 +74,7 @@
 							</div>
 							<div class="message {{$index % 2 == 0 ? 'other-message float-right' : 'my-message'}}">
 								{{m.message}}
-								<a ng-if="m.data && m.data.url" href="{{m.data.url}}">
+								<a ng-if="m.data && m.data.url" href="{{m.data.url}}" target="_blank">
 									{{m.data.url}}
 								</a>
 							</div>
