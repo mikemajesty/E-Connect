@@ -1,6 +1,6 @@
-# E-Connect is the chatbot to Improve the health of your business.
+# E-Connect - Business Chatbot.
 
-See Business Chatbot [E-Connect](https://uol-econnect.herokuapp.com/)
+See website [E-Connect](https://uol-econnect.herokuapp.com/)
 
 [![consultor.png](https://s12.postimg.org/ka85kjw65/consultor.png)](https://postimg.org/image/em1utnrtl/)]
 
