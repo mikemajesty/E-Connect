@@ -6,10 +6,10 @@ It offers all initial support and teaches you how to make a canvas to make sure 
 See website [E-Connect](https://uol-econnect.herokuapp.com/)
 
 ##### ChatBot
-[![consultor.png](https://s21.postimg.org/6sxgjnu5z/connect.png)
+![consultor.png](https://s21.postimg.org/6sxgjnu5z/connect.png)
 
 ##### Canvas
-[![canvas.png](https://s21.postimg.org/fp88nlks7/canvas.png)
+![canvas.png](https://s21.postimg.org/fp88nlks7/canvas.png)
 
 <hr>
 ##### License
