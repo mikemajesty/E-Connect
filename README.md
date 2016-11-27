@@ -2,7 +2,7 @@
 
 See website [E-Connect](https://uol-econnect.herokuapp.com/)
 
-[![consultor.png](https://s16.postimg.org/41671krz5/chatk.png)]
+[![consultor.png](https://s21.postimg.org/6sxgjnu5z/connect.png)]
 
 <hr>
 ##### License
