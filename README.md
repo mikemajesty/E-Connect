@@ -3,7 +3,7 @@
 If you have questions about starting your business EConnect will help you. 
 It offers all initial support and teaches you how to make a canvas to make sure your business can succeed.
 
-See website [E-Connect](https://uol-econnect.herokuapp.com/)
+See website [E-Connect](http://hackauol02.xyz/##message-0)
 
 ##### ChatBot
 ![consultor.png](https://s21.postimg.org/6sxgjnu5z/connect.png)
