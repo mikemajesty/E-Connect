@@ -1,2 +1,1 @@
 app/views/canvas/* linguist-vendored
-*.rb linguist-language=NodeJs
