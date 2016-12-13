@@ -16,3 +16,12 @@ See website [E-Connect](https://uol-econnect.herokuapp.com)
 
 It is available under the MIT license.
 [License](https://opensource.org/licenses/mit-license.php)
+
+<hr>
+
+### Collaborators
+
+* [mikemajesty](https://github.com/mikemajesty) -
+**Mike Lima** &lt;mikee_2008@hotmail.com&gt;
+* [celso-wo](https://github.com/celso-wo) -
+**Celso Wo** &lt;celsowo@gmail.com&gt;
