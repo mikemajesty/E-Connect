@@ -12,6 +12,7 @@ See website [E-Connect](https://uol-econnect.herokuapp.com)
 ![canvas.png](https://s21.postimg.org/fp88nlks7/canvas.png)
 
 <hr>
+
 ##### License
 
 It is available under the MIT license.
